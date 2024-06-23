@@ -52,7 +52,7 @@ __Parameters__:
 
 Can be used to globally set the error handler. Any `errorHandler` passed directly to [`commandLineValidation()`](#commandlinevalidation-errorhandler-options-spec-validators-) will override the global error handler. For example, if we wanted to change the output to use a logger and modify the exit code, we would:
 ```javascript
-const errorHandler = (msg) = { logger.error(msg); process.exit(20) }
+const errorHandler = (msg) => { logger.error(msg); process.exit(20) }
 setErrorHandler(errorHandler)
 ```
 
