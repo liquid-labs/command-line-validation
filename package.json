@@ -1,7 +1,7 @@
 {
   "name": "command-line-validation",
   "version": "1.0.0-alpha.0",
-  "description": "",
+  "description": "Validates command line arguments. A companion to command-line-args and command-line-documentation and related packages.",
   "main": "dist/command-line-validation.js",
   "scripts": {
     "build": "make",
