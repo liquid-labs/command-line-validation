@@ -58,7 +58,7 @@ setErrorHandler(errorHandler)
 
 ## Spec format
 
-The spec passed to [`commandLineValidation()`]("#commandlinevalidation-errorhandler-options-spec-validators-") is an array of objects, where each defines:
+The spec passed to [`commandLineValidation()`](#commandlinevalidation-errorhandler-options-spec-validators-) is an array of objects, where each defines:
 - `name` : (string) The name of the option.
 - `required` : (optional, boolean) If true, then if the named option isn't in the `options`, an error is reported to the error handler.
 - `validations` : (optional, object) Defines validations according to the [specify-string](https://github.com/liquid-labs/specify-string) specification.
