@@ -6,7 +6,7 @@ describe('commandLineValidation', () => {
     commandLineValidation({
       errorHandler : (msg) => { errorMsg = msg },
       options      : {},
-      spec         : { arguments : [{ name : 'foo', required : true }] }
+      spec         : [{ name : 'foo', required : true }]
     })
     expect(errorMsg).toMatch(/foo/)
   })
@@ -16,7 +16,7 @@ describe('commandLineValidation', () => {
     commandLineValidation({
       errorHandler : (msg) => { errorMsg = msg },
       options      : { foo : 'bar' },
-      spec         : { arguments : [{ name : 'foo', validations : { 'min-length' : 4 } }] }
+      spec         : [{ name : 'foo', validations : { 'min-length' : 4 } }]
     })
     expect(errorMsg).toMatch(/Value must be at least 4 characters long/)
   })

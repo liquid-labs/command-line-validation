@@ -4,19 +4,19 @@ describe('handleError', () => {
   let wroteToStdout, exitCode, origWrite, origExit
 
   beforeAll(() => {
-    origWrite = process.stdout.write
+    origWrite = process.stderr.write
     origExit = process.exit
-    process.stdout.write = (msg) => { wroteToStdout = msg }
+    process.stderr.write = (msg) => { wroteToStdout = msg }
     process.exit = (code) => { exitCode = code }
     handleError('foo')
   })
 
   afterAll(() => {
-    process.stdout.write = origWrite
+    process.stderr.write = origWrite
     process.exit = origExit
   })
 
-  test('writes error message to stdout by default', () => expect(wroteToStdout).toBe('foo\n'))
+  test('writes error message to stderr by default', () => expect(wroteToStdout).toBe('foo\n'))
 
   test('exits with code 1 by default', () => expect(exitCode).toBe(1))
 })
